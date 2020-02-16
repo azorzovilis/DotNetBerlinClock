@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BerlinClock", "BerlinClock.csproj", "{0451204D-BF86-43E1-B560-FC9AC830B9A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{295EDB8D-7FDE-4F48-AC10-35A3905B5DFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +17,15 @@ Global
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295EDB8D-7FDE-4F48-AC10-35A3905B5DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295EDB8D-7FDE-4F48-AC10-35A3905B5DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295EDB8D-7FDE-4F48-AC10-35A3905B5DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295EDB8D-7FDE-4F48-AC10-35A3905B5DFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DFA4335-4680-420D-8932-278439207C20}
 	EndGlobalSection
 EndGlobal

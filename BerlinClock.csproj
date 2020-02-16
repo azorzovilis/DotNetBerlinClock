@@ -35,6 +35,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,13 +53,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
+    <Compile Include="Classes\BerlinClockContext.cs" />
+    <Compile Include="Classes\BerlinClockFactory.cs" />
+    <Compile Include="Classes\Models\Clock.cs" />
+    <Compile Include="Classes\Models\Lamp.cs" />
+    <Compile Include="Classes\Models\LampLight.cs" />
+    <Compile Include="Classes\Models\LampRow.cs" />
+    <Compile Include="Classes\Interfaces\IBerlinClockContext.cs" />
+    <Compile Include="Classes\Interfaces\IBerlinClockFactory.cs" />
+    <Compile Include="Classes\Interfaces\IRule.cs" />
+    <Compile Include="Classes\Interfaces\ITimeValidator.cs" />
+    <Compile Include="Classes\Models\Rules\BottomHoursRule.cs" />
+    <Compile Include="Classes\Models\Rules\BottomMinutesRule.cs" />
+    <Compile Include="Classes\Models\Rules\TopHoursRule.cs" />
+    <Compile Include="Classes\Models\Rules\TopMinutesRule.cs" />
+    <Compile Include="Classes\Models\Rules\TopSecondsRowRule.cs" />
+    <Compile Include="Classes\TimeValidator.cs" />
+    <Compile Include="IoC\DependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ITimeConverter.cs" />
+    <Compile Include="Classes\Interfaces\ITimeConverter.cs" />
     <Compile Include="Classes\TimeConverter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +90,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
