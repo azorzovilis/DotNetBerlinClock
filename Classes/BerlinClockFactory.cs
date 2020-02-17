@@ -7,27 +7,26 @@
 
     public class BerlinClockFactory : IBerlinClockFactory
     {
-        public Clock GenerateBerlinClock(TimeSpan time)
+        public IClock GenerateBerlinClock(TimeSpan time)
         {
             var parts = GetTimeParts(time);
 
             return new Clock
             {
-                TopSecondsRow = GenerateLine(parts.Seconds, new TopSecondsRowRule()),
-                TopHoursRow = GenerateLine(parts.Hours, new TopHoursRule()),
-                BottomHoursRow = GenerateLine(parts.Hours, new BottomHoursRule()),
-                TopMinutesRow = GenerateLine(parts.Minutes, new TopMinutesRule()),
-                BottomMinutesRow = GenerateLine(parts.Minutes, new BottomMinutesRule())
+                TopSecondsRow = GenerateLine(parts.Seconds, new LampRow(numberOfLamps: 1), new TopSecondsRowRule()),
+                TopHoursRow = GenerateLine(parts.Hours, new LampRow(numberOfLamps: 4), new TopHoursRule()),
+                BottomHoursRow = GenerateLine(parts.Hours, new LampRow(numberOfLamps: 4), new BottomHoursRule()),
+                TopMinutesRow = GenerateLine(parts.Minutes, new LampRow(numberOfLamps: 11), new TopMinutesRule()),
+                BottomMinutesRow = GenerateLine(parts.Minutes, new LampRow(numberOfLamps: 4), new BottomMinutesRule())
             };
         }
 
-        private LampRow GenerateLine(int timeUnit, IRule rule)
+        private LampRow GenerateLine(int timeUnit, LampRow lampRow, IRule rule)
         {
-            var lampRow = new LampRow();
-            for (int index = 0; index < rule.LampsPerRow; index++)
+            for (int index = 0; index < lampRow.Lamps.Length; index++)
             {
                 var lightColour = rule.LampRule(timeUnit, index);
-                lampRow.Lamps.Add(new Lamp(lightColour));
+                lampRow.Lamps[index] = new Lamp(lightColour);
             }
             return lampRow;
         }

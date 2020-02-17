@@ -1,12 +1,13 @@
-﻿namespace BerlinClock.Classes.Interfaces
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("UnitTests")]
+namespace BerlinClock.Classes.Interfaces
 {
     using BerlinClock.Classes.Models;
     using System;
 
-    public interface IRule
+    internal interface IRule
     {
         Func<int, int, LampLight> LampRule { get; }
-
-        int LampsPerRow { get; }
     }
 }

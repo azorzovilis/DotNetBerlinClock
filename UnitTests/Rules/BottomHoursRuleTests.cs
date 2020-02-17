@@ -8,7 +8,7 @@
     [TestClass]
     public class BottomHoursRuleTests
     {
-        private IRule _itemUnderTest;
+        private readonly IRule _itemUnderTest;
 
         public BottomHoursRuleTests()
         {

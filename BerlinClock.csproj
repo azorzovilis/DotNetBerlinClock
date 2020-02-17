@@ -55,6 +55,7 @@
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
     <Compile Include="Classes\BerlinClockContext.cs" />
     <Compile Include="Classes\BerlinClockFactory.cs" />
+    <Compile Include="Classes\Interfaces\IClock.cs" />
     <Compile Include="Classes\Models\Clock.cs" />
     <Compile Include="Classes\Models\Lamp.cs" />
     <Compile Include="Classes\Models\LampLight.cs" />

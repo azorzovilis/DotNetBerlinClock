@@ -1,10 +1,11 @@
 ﻿namespace BerlinClock.Classes.Models
 {
+    using BerlinClock.Classes.Interfaces;
     using System.Text;
 
-    public class Clock
+    internal class Clock : IClock
     {
-        public Clock()
+        internal Clock()
         {
             TopSecondsRow = new LampRow();
             TopMinutesRow = new LampRow();
@@ -13,11 +14,11 @@
             BottomHoursRow = new LampRow();
         }
 
-        public LampRow TopSecondsRow { get; internal set; }
-        public LampRow TopMinutesRow { get; internal set; }
-        public LampRow BottomMinutesRow { get; internal set; }
-        public LampRow TopHoursRow { get; internal set; }
-        public LampRow BottomHoursRow { get; internal set; }
+        internal LampRow TopSecondsRow { get; set; }
+        internal LampRow TopMinutesRow { get; set; }
+        internal LampRow BottomMinutesRow { get; set; }
+        internal LampRow TopHoursRow { get; set; }
+        internal LampRow BottomHoursRow { get; set; }
 
         public override string ToString()
         {

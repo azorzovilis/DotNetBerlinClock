@@ -1,16 +1,21 @@
 ﻿namespace BerlinClock.Classes.Models
 {
-    using System.Collections.Generic;
     using System.Linq;
 
-    public class LampRow
+    internal class LampRow
     {
-        public LampRow()
+        //Create empty row
+        internal LampRow()
+            : this(numberOfLamps: 0)
         {
-            Lamps = new List<Lamp>();
         }
 
-        public IList<Lamp> Lamps { get; internal set; }
+        internal LampRow(int numberOfLamps)
+        {
+            Lamps = new Lamp[numberOfLamps];
+        }
+
+        internal Lamp[] Lamps { get; set; }
 
         public override string ToString()
         {

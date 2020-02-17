@@ -3,7 +3,6 @@
     using BerlinClock;
     using BerlinClock.Classes;
     using BerlinClock.Classes.Interfaces;
-    using BerlinClock.Classes.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using System;
@@ -14,6 +13,10 @@
         private readonly ITimeConverter _itemUnderTest;
         private readonly IBerlinClockContext _berlinClockContext = Mock.Of<IBerlinClockContext>();
         private readonly ITimeValidator _timeValidator = Mock.Of<ITimeValidator>();
+        private class FakeClock : IClock
+        {
+            internal FakeClock() { }
+        }
 
         public TimeConverterTests()
         {
@@ -40,7 +43,7 @@
         {
             // Arrange
             var time = new TimeSpan(23, 33, 18);
-            var clock = new Clock();
+            var clock = new FakeClock();
 
             Mock.Get(_timeValidator).Setup(s => s.IsValidTime(time.ToString())).Returns(true);      
             Mock.Get(_berlinClockContext).Setup(s => s.SetBerlinClockTime(time)).Returns(clock);

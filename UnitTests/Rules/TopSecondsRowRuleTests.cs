@@ -8,7 +8,7 @@
     [TestClass]
     public class TopSecondsRowRuleTestsTests
     {
-        private IRule _itemUnderTest;
+        private readonly IRule _itemUnderTest;
 
         public TopSecondsRowRuleTestsTests()
         {

@@ -1,6 +1,6 @@
 ﻿namespace BerlinClock.Classes.Models
 {
-    public enum LampLight
+    internal enum LampLight
     {
         Off = 'O',
         Red = 'R',

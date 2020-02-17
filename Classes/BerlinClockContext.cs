@@ -1,13 +1,12 @@
 ﻿namespace BerlinClock.Classes
 {
     using BerlinClock.Classes.Interfaces;
-    using BerlinClock.Classes.Models;
     using System;
 
     public class BerlinClockContext : IBerlinClockContext
     {
         private readonly IBerlinClockFactory _clockFactory;
-        private Clock _berlinClock;
+        private IClock _berlinClock;
 
         public BerlinClockContext(IBerlinClockFactory clockFactory)
         {
@@ -17,12 +16,12 @@
             _berlinClock = SetBerlinClockTime(TimeSpan.Zero);
         }
 
-        public Clock SetBerlinClockTime(TimeSpan time)
+        public IClock SetBerlinClockTime(TimeSpan time)
         {
             return _berlinClock = _clockFactory.GenerateBerlinClock(time);
         }
 
-        public Clock GetBerlinClock()
+        public IClock GetBerlinClock()
         {
             return _berlinClock;
         }
