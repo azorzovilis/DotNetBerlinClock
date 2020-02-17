@@ -1,5 +1,6 @@
 ﻿namespace BerlinClockTests.UnitTests
 {
+    using BerlinClock;
     using BerlinClock.Classes;
     using BerlinClock.Classes.Interfaces;
     using BerlinClock.Classes.Models;

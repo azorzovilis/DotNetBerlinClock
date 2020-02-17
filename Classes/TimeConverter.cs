@@ -28,6 +28,11 @@
             return _berlinClockContext.GetBerlinClock().ToString();
         }
 
+        public string convertTime(string aTime)
+        {
+            return this.ConvertTime(aTime);
+        }
+
         private TimeSpan ParseGivenTime(string aTime)
         {
             var timeArray = aTime.Split(':').Select(int.Parse).ToArray();
